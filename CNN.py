@@ -15,15 +15,12 @@ import seqHelper
 import lasagneModelsFingerprints
 
 
-# expr_filename = '../../data/csv_files/logSolubilityTest.csv'
-expr_filename = '../input_data.csv'
-# fingerprint_filename = '../../data/temp/logSolubilityInput_withRDKITidx.pkl'
-fingerprint_filename = '../CNN/cnn_fingerprint.pkl'
+expr_filename = '../data/input_data.csv'
+fingerprint_filename = '../data/cnn_fingerprint.pkl'
 
 
 #some hyperparameters of the job
 batch_size = 350
-# batch_size = 7
 
 #this is the dimension of the output fingerprint
 fingerprint_dim = 265
@@ -57,21 +54,10 @@ if neural_net == []:
     neural_net_present = 'False'
 
 #define the name of the output so I can save my predictions
-# if expr_filename == '../../data/csv_files/logSolubilityTest.csv':
-#     test_type = 'solubility'
-# progress_filename = '../../log_files/CNN_fingerprint_NN-'+neural_net_present+'_'+test_type+'_'+start_time+'.csv'
 
 
-# my code
-# if expr_filename == '../../druglike_data/csv_files/decoys1_training_fix.csv':
-#     test_type = 'drug-like'
-# progress_train_filename = '../../druglike_cnn_add_test_7_2_1/output/CNN_fingerprint_train_NN-' + neural_net_present + '_' + test_type  + '.csv'
-# progress_val_filename = '../../druglike_cnn_add_test_7_2_1/output/CNN_fingerprint_val_NN-' + neural_net_present + '_' + test_type + '.csv'
-# progress_train_output_df = pd.DataFrame()
-# progress_val_output_df = pd.DataFrame()
 
-
-if expr_filename == '../input_data.csv':
+if expr_filename == '../data/input_data.csv':
     test_type = 'drug-like'
 progress_train_filename = '../CNN/output/train/CNN_fingerprint_train_NN-' + neural_net_present + '_' + test_type + '.csv'
 progress_val_filename = '../CNN/output/val/CNN_fingerprint_val_NN-' + neural_net_present + '_' + test_type + '.csv'
