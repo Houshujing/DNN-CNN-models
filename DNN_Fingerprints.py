@@ -4,10 +4,8 @@ from joblib import Parallel, delayed
 import multiprocessing
 
 num_bits = 2048
-#input_filename = '../../data/csv_files/logSolubilityTest.csv'
-input_filename = '../input_data.csv'
-# output_filename = '../../data/temp/solubility_control_fingerprints_'+str(num_bits)+'_1.csv'
-output_filename = '..DNN/dnn_fingerprints_' + str(num_bits) + '.csv'
+input_filename = '../data/input_data.csv'
+output_filename = '../data/dnn_fingerprints_' + str(num_bits) + '.csv'
 
 def getFingerprint(smiles):
     mol = Chem.MolFromSmiles(smiles)
