@@ -22,10 +22,9 @@ import lasagneModelsFingerprints
 
 
 #get the name of files we need, which is the csv files of the activity...
-# expr_filename = '../../data/csv_files/logSolubilityTest.csv'
-expr_filename= '../input_data.csv'
+expr_filename= '../data/input_data.csv'
 #and the name of the fingerprints
-fingerprint_filename = 'DNN/dnn_fingerprints_2048.csv'
+fingerprint_filename = '../data/dnn_fingerprints_2048.csv'
 #then get all the hyperparameters as well
 batch_size = 300
 learning_rate = 0.001
@@ -56,12 +55,11 @@ if neural_net == []:
     neural_net_present = 'False'
 
 
-if expr_filename == '../input_data.csv':
+if expr_filename == '../data/input_data.csv':
     test_type = 'drug_likeness'
 
-# progress_filename = '../../output/NN_control-'+neural_net_present+'_'+test_type+'_'+start_time+'.csv'
-progress_train_filename = '..CB2/DNN/output/progress_files/train/NN_ecfp_train-' + neural_net_present + '_' + test_type + '.csv'
-progress_val_filename = '..CB2/DNN/output/progress_files/val/NN_ecfp_val-' + neural_net_present + '_' + test_type + '.csv'
+progress_train_filename = '../CB2/DNN/output/progress_files/train/NN_ecfp_train-' + neural_net_present + '_' + test_type + '.csv'
+progress_val_filename = '../CB2/DNN/output/progress_files/val/NN_ecfp_val-' + neural_net_present + '_' + test_type + '.csv'
 progress_train_output_df = pd.DataFrame()
 progress_val_output_df = pd.DataFrame()
 
@@ -148,9 +146,9 @@ val_epo_list = []
 
 for epoch in xrange(num_epochs):
     print epoch
-    progress_filename_train = '..CB2/DNN/batch300/log_files/train/drug_like_train-' + str(
+    progress_filename_train = '../CB2/DNN/batch300/log_files/train/drug_like_train-' + str(
         epoch) + neural_net_present + '_' + test_type + '.csv'
-    progress_filename_val = '..CB2/DNN/batch300/log_files/val/drug_like_val-' + str(
+    progress_filename_val = '../CB2/DNN/batch300/log_files/val/drug_like_val-' + str(
         epoch) + neural_net_present + '_' + test_type + '.csv'
 
     output_train_df = pd.DataFrame()
@@ -253,8 +251,8 @@ output_test_df.to_csv(progress_filename_test, mode='a')
 
 # ### ChemDiv test
 
-tcm_expr_filename = '..CB2/DNN/database/ChemDiv.csv'
-tcm_fingerprint_filename = '..CB2/DNN/database/fingerprint/ChemDiv_fingerprints_2048.csv'
+tcm_expr_filename = '../CB2/DNN/database/ChemDiv.csv'
+tcm_fingerprint_filename = '../CB2/DNN/database/fingerprint/ChemDiv_fingerprints_2048.csv'
 
 tcm_smiles_to_prediction, tcm_smiles_to_fingerprint \
      = seqHelper.read_in_ecfp_data(tcm_expr_filename, tcm_fingerprint_filename)
