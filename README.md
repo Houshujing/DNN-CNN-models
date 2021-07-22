@@ -1,4 +1,4 @@
-# DNN and CNN classification models of CB2 receptors antagonists
+# DNN and CNN classification models of CB2 receptor antagonists
 =============
 ## Requirements
 
