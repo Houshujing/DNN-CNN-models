@@ -25,7 +25,7 @@
 import os
 import pandas as pd
 
-base_dir = '/home/jianping/PycharmProjects/neural-fingerprint-theano-master/druglike_1119/druglike_data/csv_files'
+base_dir = '../PycharmProjects/neural-fingerprint-theano-master/druglike_1119/druglike_data/csv_files'
 file_dir = os.path.join(base_dir, 'yatcm_training_fix.csv')
 # df = pd.read_csv(file_dir)
 # print(df.columns)
