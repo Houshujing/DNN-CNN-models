@@ -184,9 +184,9 @@ def gen_descriptor_data(smilesList):
 
 if __name__ == "__main__":
     # inputFilename = '../../data/csv_files/logSolubilityTest.csv'
-    inputFilename= '../input_data.csv'
+    inputFilename= '../data/input_data.csv'
     # outputFilename = '../../data/temp/logSolubilityInput_withRDKITidx_1.pkl'
-    outputFilename = 'CNN/cnn_fingerprints.pkl'
+    outputFilename = 'data/cnn_fingerprints.pkl'
     smiles_dict = {}
     INPUT = open(inputFilename, 'r')
     for line in INPUT:
